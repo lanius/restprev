@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>reST Previewer - Preview Tool for reStructuredText</title>
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="{{url_for('static', filename="style.css")}}" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Aclonica:regular" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="contents">
+
+<h1>reST Previewer</h1>
+
+<div id="menutab-wrapper">
+  <span id="menutab-source" class="menutab menutab-left">Source</span>
+  <span id="menutab-preview" class="menutab">Preview</span>
+  <span id="menutab-quickref" class="menutab">Quickref</span>
+  <span id="menutab-cheatsheet" class="menutab">Cheatsheet</span>
+  <span id="menutab-realtime" class="menutab menutab-right menutab-selected">Realtime</span>
+</div>
+
+<div id="pane-source" class="pane hidden">
+  <textarea id="source"></textarea>
+</div>
+
+<div id="pane-preview" class="pane hidden">
+  <iframe id="preview"></iframe>
+</div>
+
+<div id="pane-quickref" class="pane hidden">
+  <iframe id="quickref" class="external-contents"></iframe>
+</div>
+
+<div id="pane-cheatsheet" class="pane hidden">
+  <iframe id="cheatsheet" class="external-contents"></iframe>
+</div>
+
+<div id="pane-realtime" class="pane">
+  <h2>Source:</h2>
+  <hr />
+  <textarea id="realtimesource">==============
+reST Previewer
+==============
+
+What is this?
+=============
+reST Previewer is preview tool for reStructuredText.
+
+Usage
+=====
+Input reStructuredText here.</textarea>
+  
+  <h2>HTML:</h2>
+  <hr />
+  <iframe id="realtimepreview"></iframe>
+</div>
+
+<div id="author">
+presented by <a href="http://twitter.com/lanius" target="_blank">lanius</a>
+</div>
+
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="{{url_for('static', filename="script.js")}}"></script>
+<script type="text/javascript" async>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-21536120-2']);
+_gaq.push(['_trackPageview']);
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<a href="https://github.com/lanius/restpreviewer"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a>
+</body>
+</html>

@@ -1,0 +1,2 @@
+﻿Flask==0.7.2
+docutils==0.8
