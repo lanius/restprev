@@ -54,6 +54,7 @@
   var realtime = $("#realtimesource").keyup(inputHandler);
   
   
-  // translate initial contents.
+  // initialize top contents.
+  $("#menutab-realtime").click();
   translate($("#realtimesource"), $("#realtimepreview"));
 });

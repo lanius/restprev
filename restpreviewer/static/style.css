@@ -6,7 +6,7 @@
 
 h1 {
     color: #56a;
-    text-shadow: 0px 3px 3px #459;
+    text-shadow: 0 3px 3px #459;
     font-size: 40px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -27,19 +27,20 @@ hr {
 }
 
 #menutab-wrapper {
-	margin-bottom: 25px;
+	margin-bottom: 30px;
+	margin-top: 23px;
 }
 
 #source {
     width: 99.5%;
-    height: 450px;
+    height: 500px;
     background-color: #ccc;
     font-size: 18px;
 }
 
 #preview {
     width: 99.5%;
-    height: 70%;
+    height: 500px;
     background-color: #ccc;
 }
 
@@ -79,6 +80,7 @@ hr {
     background: linear-gradient(top, #dddddd 0%,#888888 100%);
     padding: 5px 20px 5px 20px;
     cursor: pointer;
+    border: 2px solid #ccc;
 }
 
 .menutab:hover {
@@ -105,35 +107,39 @@ hr {
 }
 
 .menutab-selected {
-    border: 2px solid #ccc;
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #bbbbbb 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#bbbbbb));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#bbbbbb 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#bbbbbb 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#bbbbbb 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#bbbbbb',GradientType=0 );
+    background: linear-gradient(top, #ffffff 0%,#bbbbbb 100%);
+    border: 3px solid #ccc;
 }
 
 .menutab-left {
-    border-radius: 8px 0px 0px 8px;
+    border-radius: 8 0 0 8px;
 }
 
 .menutab-right {
-    border-radius: 0px 8px 8px 0px;
+    border-radius: 0 8px 8px 0;
 }
 
-.hidden {
-    display: none;
-}
-
-a:link {
+footer a:link {
     color: #ccc;
 }
 
-a:visited {
+footer a:visited {
     color: #ccc;
 }
 
-a:hover {
+footer a:hover {
     color: #aaaaff;
 }
 
 .external-contents {
    background-color: #ccc;
    width: 99.5%;
-   height: 70%;
+   height: 500px;
 }

@@ -11,7 +11,7 @@ Installation
 
 Local Machine
 -------------
-Downloads and extracts source code.
+Download the source code.
 Install required libraries::
 
     cd restpreviewer/
@@ -27,11 +27,7 @@ Host name and port number can be specified by arguments::
 
 Dotcloud
 --------
-Downloads and extracts source code.
-Remove .hg directory::
-
-    rm -rf .hg
-
+Download the source code.
 Install dotcloud command and push reST Previewer::
 
     pip install dotcloud

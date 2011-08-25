@@ -10,29 +10,31 @@
 <body>
 <div id="contents">
 
-<h1>reST Previewer</h1>
+<header>
+  <h1>reST Previewer</h1>
+</header>
 
-<div id="menutab-wrapper">
-  <span id="menutab-source" class="menutab menutab-left">Source</span>
-  <span id="menutab-preview" class="menutab">Preview</span>
-  <span id="menutab-quickref" class="menutab">Quickref</span>
-  <span id="menutab-cheatsheet" class="menutab">Cheatsheet</span>
-  <span id="menutab-realtime" class="menutab menutab-right menutab-selected">Realtime</span>
+<nav id="menutab-wrapper">
+  <a id="menutab-source" class="menutab menutab-left">Source</a>
+  <a id="menutab-preview" class="menutab">Preview</a>
+  <a id="menutab-quickref" class="menutab">Quickref</a>
+  <a id="menutab-cheatsheet" class="menutab">Cheatsheet</a>
+  <a id="menutab-realtime" class="menutab menutab-right menutab-selected">Realtime</a>
+</nav>
+
+<div id="pane-source" class="pane">
+  <textarea id="source" placeholder="Input reStructuredText here."></textarea>
 </div>
 
-<div id="pane-source" class="pane hidden">
-  <textarea id="source"></textarea>
-</div>
-
-<div id="pane-preview" class="pane hidden">
+<div id="pane-preview" class="pane">
   <iframe id="preview"></iframe>
 </div>
 
-<div id="pane-quickref" class="pane hidden">
+<div id="pane-quickref" class="pane">
   <iframe id="quickref" class="external-contents"></iframe>
 </div>
 
-<div id="pane-cheatsheet" class="pane hidden">
+<div id="pane-cheatsheet" class="pane">
   <iframe id="cheatsheet" class="external-contents"></iframe>
 </div>
 
@@ -56,9 +58,9 @@ Input reStructuredText here.</textarea>
   <iframe id="realtimepreview"></iframe>
 </div>
 
-<div id="author">
+<footer id="author">
 presented by <a href="http://twitter.com/lanius" target="_blank">lanius</a>
-</div>
+</footer>
 
 </div>
 
