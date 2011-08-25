@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title>reST Previewer - Preview Tool for reStructuredText</title>
   <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" href="{{url_for('static', filename="style.css")}}" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Aclonica:regular" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{{url_for('static', filename="style.css")}}">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Aclonica:regular">
 </head>
 <body>
 <div id="contents">
@@ -64,9 +64,9 @@ presented by <a href="http://twitter.com/lanius" target="_blank">lanius</a>
 
 </div>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script type="text/javascript" src="{{url_for('static', filename="script.js")}}"></script>
-<script type="text/javascript" async>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="{{url_for('static', filename="script.js")}}"></script>
+<script async>
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-21536120-2']);
 _gaq.push(['_trackPageview']);

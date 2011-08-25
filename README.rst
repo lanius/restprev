@@ -11,7 +11,13 @@ Installation
 
 Local Machine
 -------------
-Download the source code.
+Download the source code and extract it::
+
+     wget https://github.com/lanius/restpreviewer/tarball/master
+     mv master restpreviewer.tar.gz
+     tar zxvf restpreviewer.tar.gz
+     cd lanius-restpreviewer-*
+
 Install required libraries::
 
     cd restpreviewer/
@@ -27,7 +33,13 @@ Host name and port number can be specified by arguments::
 
 Dotcloud
 --------
-Download the source code.
+Download the source code and extract it::
+
+     wget https://github.com/lanius/restpreviewer/tarball/master
+     mv master restpreviewer.tar.gz
+     tar zxvf restpreviewer.tar.gz
+     cd lanius-restpreviewer-*
+
 Install dotcloud command and push reST Previewer::
 
     pip install dotcloud

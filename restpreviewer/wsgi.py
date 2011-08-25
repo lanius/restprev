@@ -10,8 +10,10 @@
 """
 
 from optparse import OptionParser
-from flask import Flask, request, render_template, abort
 from docutils.core import publish_string
+from flask import Flask, request, render_template, abort
+
+MAX_RST_LENGTH = 50000
 
 app = Flask(__name__)
 
@@ -25,9 +27,13 @@ def index():
 def rst():
     if request.method == 'POST':
         rst_data = request.data
+        if len(rst_data) > MAX_RST_LENGTH:
+            return "Sorry! Text data is too large. \
+If necessary, you should consider that \
+you install reST Previewer on local system."        
         return publish_string(rst_data, writer_name="html4css1")
     else:
-        abort(400)
+        abort(405)
 
 if __name__ == '__main__':
     parser = OptionParser(add_help_option=False)
