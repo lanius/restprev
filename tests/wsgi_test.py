@@ -14,14 +14,14 @@ import sys
 import unittest
 
 script_path = os.path.abspath(os.path.dirname(__file__))
-PROJECT_HOME = os.path.join(script_path, '..')
-sys.path.append(PROJECT_HOME)
+project_home = os.path.join(script_path, '..')
+sys.path.append(project_home)
 
 try:
     import restpreviewer.wsgi
 except ImportError:
     sys.exit('restpreviewer cannot be imported.\
-please check PROJECT_HOME in wsgi_test.py.')
+please check project_home in wsgi_test.py.')
 
 class WsgiTestCase(unittest.TestCase):
 
