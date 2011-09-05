@@ -1,4 +1,12 @@
 ﻿$(function(){
+  var localStorage;
+  if (typeof window.localStorage === "undefined") {
+      console.log("localStorage is not supported");
+      localStorage = {};
+  } else {
+      localStorage = window.localStorage;
+  }
+
   // Menu settings
   $(".menutab").click(function(){
     var element = $(this);
@@ -28,7 +36,9 @@
     var current = element.val();
     var previous = element.attr("data-previous");
     if (previous!=current) {
-      var previewId = element.attr("id").replace("source", "preview");
+      var sourceId = element.attr("id");
+      var previewId = sourceId.replace("source", "preview");
+      localStorage["#" + sourceId] = current;
       translate(element, $("#" + previewId));
       element.attr("data-previous", current);
     }
@@ -53,6 +63,12 @@
   var source = $("#source").keyup(inputHandler);
   var realtime = $("#realtimesource").keyup(inputHandler);
   
+  if (localStorage["#source"] !== null) {
+      source.val(localStorage["#source"]);
+  }
+  if (localStorage["#realtimesource"] !== null) {
+      realtime.val(localStorage["#realtimesource"]);
+  }
   
   // initialize top contents.
   $("#menutab-realtime").click();
