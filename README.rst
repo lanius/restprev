@@ -6,6 +6,11 @@ What is this?
 =============
 reST Previewer is preview tool for reStructuredText.
 
+Live Demo
+=========
+
+You can see reST Previewer running at http://restpreviewer.nirvake.org/.
+
 Installation
 ============
 
@@ -19,6 +24,10 @@ Install required libraries::
 
     cd restpreviewer/restpreviewer/
     pip install -r requirements.txt
+
+You may need to install  python-imaging::
+
+    yum install python-imaging
 
 Run reST Previewer server::
 
