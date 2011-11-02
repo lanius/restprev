@@ -12,6 +12,7 @@
 from optparse import OptionParser
 from docutils.core import publish_string
 from flask import Flask, request, render_template, abort
+import ext_directive
 
 MAX_RST_LENGTH = 50000
 
