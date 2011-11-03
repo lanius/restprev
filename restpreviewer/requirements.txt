@@ -1,4 +1,6 @@
 Flask==0.8.0
 docutils==0.8
 blockdiag==0.9.7
-PIL==1.1.7
+seqdiag==0.6.2
+actdiag==0.2.2
+nwdiag==0.5.3

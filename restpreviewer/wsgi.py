@@ -20,9 +20,11 @@ app = Flask(__name__)
 
 app.debug = False
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @app.route('/rst', methods=['GET', 'POST'])
 def rst():
@@ -31,10 +33,11 @@ def rst():
         if len(rst_data) > MAX_RST_LENGTH:
             return "Sorry! Text data is too large. \
 If necessary, you should consider that \
-you install reST Previewer on local system."        
+you install reST Previewer on local system."
         return publish_string(rst_data, writer_name="html4css1")
     else:
         abort(405)
+
 
 if __name__ == '__main__':
     parser = OptionParser(add_help_option=False)
