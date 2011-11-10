@@ -39,9 +39,12 @@
 </div>
 
 <div id="pane-realtime" class="pane">
-  <h2>Source:</h2>
-  <hr />
-  <textarea id="realtimesource">==============
+
+  <div id="realtime-container">
+    <div id="source-column">
+      <h2>Source:</h2>
+      <hr />
+      <textarea id="realtimesource">==============
 reST Previewer
 ==============
 
@@ -52,15 +55,13 @@ reST Previewer is preview tool for reStructuredText.
 Usage
 =====
 Input reStructuredText here.</textarea>
-  
-  <h2>HTML:</h2>
-  <hr />
-  <iframe id="realtimepreview"></iframe>
-</div>
-
-<footer id="author">
-presented by <a href="http://twitter.com/lanius" target="_blank">lanius</a>
-</footer>
+    </div>
+    <div id="preview-column">
+      <h2>HTML:</h2>
+      <hr />
+      <iframe id="realtimepreview"></iframe>
+    </div>
+  </div>
 
 </div>
 
