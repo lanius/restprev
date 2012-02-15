@@ -19,11 +19,11 @@
     $(".pane").hide();
     $("#pane" + element.attr("id").match(/-.*/)).show();
     
-    if (element.attr("id")=="menutab-quickref" && $("#quickref").attr("data-loaded")!=true) {
+    if (element.attr("id") === "menutab-quickref" && $("#quickref").attr("data-loaded") !== true) {
       $("#quickref").attr("src", "http://docutils.sourceforge.net/docs/user/rst/quickref.html");
       $("#quickref").attr("data-loaded", true);
     }
-    else if (element.attr("id")=="menutab-cheatsheet" && $("#cheatsheet").attr("data-loaded")!=true) {
+    else if (element.attr("id") === "menutab-cheatsheet" && $("#cheatsheet").attr("data-loaded") !== true) {
       $("#cheatsheet").attr("src" ,"http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt");
       $("#cheatsheet").attr("data-loaded", true);
     }
@@ -35,7 +35,7 @@
     var element = $(this);
     var current = element.val();
     var previous = element.attr("data-previous");
-    if (previous!=current) {
+    if (previous !== current) {
       var sourceId = element.attr("id");
       var previewId = sourceId.replace("source", "preview");
       localStorage["#" + sourceId] = current;
@@ -60,8 +60,8 @@
     });
   };
   
-  var source = $("#source").keyup(inputHandler);
-  var realtime = $("#realtimesource").keyup(inputHandler);
+  var source = $("#source").keyup($.debounce(350, inputHandler));
+  var realtime = $("#realtimesource").keyup($.debounce(350, inputHandler));
   
   if (localStorage["#source"] !== null) {
       source.val(localStorage["#source"]);
