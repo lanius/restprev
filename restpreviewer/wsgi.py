@@ -48,5 +48,3 @@ if __name__ == '__main__':
     host = options.host if options.host else '127.0.0.1'
     port = options.port if options.port else 8080
     app.run(host=host, port=port)
-
-application = app
