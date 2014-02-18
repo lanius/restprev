@@ -7,8 +7,13 @@
       return ($('.container').height() - 230) + 'px';
     },
 
+    applyStyleToFrame: function (name) {
+      var iframeStyle = $('<link rel="stylesheet" href="/static/iframe.css"></link>');
+      $('#frame-' + name).contents().find('head').append(iframeStyle);
+    },
+
     getKeyInputHandler: function (name) {
-      var frameContents = $('#frame-' + name).contents();
+      var html = $('#frame-' + name).contents().get(0);
       return function keyInputHandler (editor) {
         var data = editor.getValue();
         localStorage.setItem(name, data);
@@ -18,13 +23,10 @@
           data: data,
           contentType: 'application/json',
         }).then(function (data) {
-          var html = frameContents.get(0);
           html.open();
           html.write(data);
           html.close();
-
-          var iframeStyle = $('<link rel="stylesheet" href="/static/iframe.css"></link>');
-          frameContents.find('head').append(iframeStyle);
+          helper.applyStyleToFrame(name);
         });
       };
     },
@@ -94,12 +96,15 @@
     },
 
     preview: function (name) {
+      var preview = frames[name];
+      if (!preview) {
+        helper.applyStyleToFrame(name);
+      }
       this.frame(name);
     },
 
     frame: function (name) {
       var frame = frames[name];
-
       if (!frame) {
         helper.registerResizeFunction(function () {
           $('#frame-' + name).height(helper.getPaneHeightPx());
