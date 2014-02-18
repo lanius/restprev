@@ -4,3 +4,4 @@ blockdiag==0.9.7
 seqdiag==0.6.2
 actdiag==0.2.2
 nwdiag==0.5.3
+gunicorn==18.0
