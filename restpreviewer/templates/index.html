@@ -1,83 +1,93 @@
 ﻿<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>reST Previewer - Preview Tool for reStructuredText</title>
-  <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" href="{{url_for('static', filename="style.css")}}">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Aclonica:regular">
-</head>
-<body>
-<div id="contents">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>reST Previewer - Preview Tool for reStructuredText</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='lib/codemirror/codemirror.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='lib/codemirror/theme/pastel-on-dark.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+  </head>
+  <body>
 
-<header>
-  <h1>reST Previewer</h1>
-</header>
+    <div class="container">
 
-<nav id="menutab-wrapper">
-  <a id="menutab-source" class="menutab menutab-left">Source</a>
-  <a id="menutab-preview" class="menutab">Preview</a>
-  <a id="menutab-quickref" class="menutab">Quickref</a>
-  <a id="menutab-cheatsheet" class="menutab">Cheatsheet</a>
-  <a id="menutab-realtime" class="menutab menutab-right menutab-selected">Realtime</a>
-</nav>
+      <div class="page-header">
+        <h1>Preview your reST code.</h1>
+      </div>
 
-<div id="pane-source" class="pane">
-  <textarea id="source" placeholder="Input reStructuredText here." wrap="off"></textarea>
-</div>
+      <div>
+        <ul id="menu" class="nav nav-pills">
+          <li><a href="#tab-source" data-tab="source" data-toggle="tab">Source</a></li>
+          <li><a href="#tab-preview" data-tab="preview" data-toggle="tab">Preview</a></li>
+          <li><a href="#tab-realtime" data-tab="realtime" data-toggle="tab">Realtime</a></li>
+          <li><a href="#tab-quickref" data-tab="quickref" data-toggle="tab">Quick Ref.</a></li>
+          <li><a href="#tab-cheatsheet" data-tab="cheatsheet" data-toggle="tab">Cheat Sheet</a></li>
+        </ul>
+      </div>
 
-<div id="pane-preview" class="pane">
-  <iframe id="preview"></iframe>
-</div>
+      <div class="tab-content">
 
-<div id="pane-quickref" class="pane">
-  <iframe id="quickref" class="external-contents"></iframe>
-</div>
+        <div class="tab-pane active in" id="tab-source">
+          <div class="displayed-pane">
+            <textarea id="textarea-alternate" class="editor"></textarea>
+          </div>
+        </div>
 
-<div id="pane-cheatsheet" class="pane">
-  <iframe id="cheatsheet" class="external-contents"></iframe>
-</div>
+        <div class="tab-pane" id="tab-preview">
+          <div class="displayed-pane">
+            <iframe id="frame-alternate"></iframe>
+          </div>
+        </div>
 
-<div id="pane-realtime" class="pane">
+        <div class="tab-pane fade" id="tab-realtime">
+          <div class="displayed-pane container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <textarea id="textarea-realtime" class="editor"></textarea>
+              </div>
+              <div class="col-md-6">
+                <iframe id="frame-realtime"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  <div id="realtime-container">
-    <div id="source-column">
-      <h2>Source:</h2>
-      <hr />
-      <textarea id="realtimesource" wrap="off">==============
-reST Previewer
-==============
+        <div class="tab-pane fade" id="tab-quickref">
+          <div class="displayed-pane">
+            <iframe id="frame-quickref" class="external-contents" src="http://docutils.sourceforge.net/docs/user/rst/quickref.html"></iframe>
+          </div>
+        </div>
 
-What is this?
-=============
-reST Previewer is preview tool for reStructuredText.
+        <div class="tab-pane fade" id="tab-cheatsheet">
+          <div class="displayed-pane">
+            <iframe id="frame-cheatsheet" class="external-contents" src="http://docutils.sourceforge.net/docs/user/rst/cheatsheet.txt"></iframe>
+          </div>
+        </div>
 
-Usage
-=====
-Input reStructuredText here.</textarea>
-    </div>
-    <div id="preview-column">
-      <h2>HTML:</h2>
-      <hr />
-      <iframe id="realtimepreview"></iframe>
-    </div>
-  </div>
+      </div>
 
-</div>
+    </div> <!-- /container -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="{{url_for('static', filename="jquery.ba-throttle-debounce.js")}}"></script>
-<script src="{{url_for('static', filename="script.js")}}"></script>
-<script async>
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-21536120-2']);
-_gaq.push(['_trackPageview']);
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-</script>
-<a href="https://github.com/lanius/restpreviewer"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a>
-</body>
+    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="{{url_for('static', filename='lib/jquery.ba-throttle-debounce.min.js')}}"></script>
+    <script src="{{url_for('static', filename='lib/codemirror/codemirror.js')}}"></script>
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+
+    <script async>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-21536120-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+
+    <a href="https://github.com/lanius/restpreviewer"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+  </body>
 </html>
