@@ -18,21 +18,31 @@ Local Machine
 -------------
 Download the source code::
 
-    git clone git://github.com/lanius/restpreviewer.git
+.. code-block:: bash
+
+    $ git clone git://github.com/lanius/restpreviewer.git
 
 Install required libraries::
 
-    cd restpreviewer/restpreviewer/
-    pip install -r requirements.txt
+.. code-block:: bash
+
+    $ cd restpreviewer/restpreviewer/
+    $ pip install -r requirements.txt
 
 You may need to install  python-imaging::
 
-    yum install python-imaging
+.. code-block:: bash
+
+    $ yum install python-imaging
 
 Run reST Previewer server::
 
-    python wsgi.py
+.. code-block:: bash
+
+     $ python wsgi.py
 
 Host name and port number can be specified by arguments::
 
-    python wsgi.py --host localhost --port 8080
+.. code-block:: bash
+
+    $ python wsgi.py --host localhost --port 8080
