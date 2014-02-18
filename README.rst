@@ -9,7 +9,7 @@ reST Previewer is preview tool for reStructuredText.
 Live Demo
 =========
 
-You can see reST Previewer running at http://restpreviewer.nirvake.org/.
+You can see reST Previewer running at http://restprev.nirvake.org/.
 
 Installation
 ============
