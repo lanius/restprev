@@ -36,18 +36,3 @@ Run reST Previewer server::
 Host name and port number can be specified by arguments::
 
     python wsgi.py --host localhost --port 8080
-
-Dotcloud
---------
-Download the source code::
-
-    git clone git://github.com/lanius/restpreviewer.git
-
-Install dotcloud command and push reST Previewer::
-
-    cd restpreviewer
-    pip install dotcloud
-    dotcloud
-    dotcloud create restpreviewer
-    dotcloud push restpreviewer .
-
