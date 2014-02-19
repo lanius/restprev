@@ -31,10 +31,10 @@ def rst():
     if request.method == 'POST':
         rst_data = request.data
         if len(rst_data) > MAX_RST_LENGTH:
-            return "Sorry! Text data is too large. \
+            return 'Sorry! Text data is too large. \
 If necessary, you should consider that \
-you install reST Previewer on local system."
-        return publish_string(rst_data, writer_name="html4css1")
+you install reST Previewer on local system.'
+        return publish_string(rst_data, writer_name='html4css1')
     else:
         abort(405)
 
