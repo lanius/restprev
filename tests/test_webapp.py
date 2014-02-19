@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-    reST Prev wsgi tests
-    ~~~~~~~~~~~~~~~~~~~~
+    reST Prev webapp tests
+    ~~~~~~~~~~~~~~~~~~~~~~
 
     Tests application script of reST Prev.
 
