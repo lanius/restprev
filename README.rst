@@ -39,10 +39,10 @@ Run reST Prev server:
 
 .. code-block:: bash
 
-     $ python wsgi.py
+     $ python webapp.py
 
 Host name and port number can be specified by arguments:
 
 .. code-block:: bash
 
-    $ python wsgi.py --host localhost --port 8080
+    $ python webapp.py --host localhost --port 8080
