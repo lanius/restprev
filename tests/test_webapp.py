@@ -23,6 +23,7 @@ except ImportError:
     sys.exit('restprev cannot be imported.\
 please check project_home in wsgi_test.py.')
 
+
 class WsgiTestCase(unittest.TestCase):
 
     def setUp(self):
@@ -33,9 +34,8 @@ class WsgiTestCase(unittest.TestCase):
         pass
 
     def test_rst(self):
-        rv = self.app.post('/rst', data="title\n=====")
+        rv = self.app.post('/rst', data='title\n=====')
         assert '<h1 class="title">title</h1>' in rv.data
-        
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     unittest.main()
-    
