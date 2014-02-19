@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-    restpreviewer.ext_directive
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    restprev.ext_directive
+    ~~~~~~~~~~~~~~~~~~~~~~
 
     Docutils directives for blockdiag.
 

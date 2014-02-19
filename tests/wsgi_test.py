@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-    reST Previewer wsgi tests
-    ~~~~~~~~~~~~~~~~~~~~~~~~~
+    reST Prev wsgi tests
+    ~~~~~~~~~~~~~~~~~~~~
 
-    Tests application script of reST Previewer.
+    Tests application script of reST Prev.
 
     :copyright: (c) 2011 lanius
     :license: MIT, see LICENSE for more details.
@@ -18,16 +18,16 @@ project_home = os.path.join(script_path, '..')
 sys.path.append(project_home)
 
 try:
-    import restpreviewer.wsgi
+    import restprev.webapp
 except ImportError:
-    sys.exit('restpreviewer cannot be imported.\
+    sys.exit('restprev cannot be imported.\
 please check project_home in wsgi_test.py.')
 
 class WsgiTestCase(unittest.TestCase):
 
     def setUp(self):
-        restpreviewer.wsgi.app.config['TESTING'] = True
-        self.app = restpreviewer.wsgi.app.test_client()
+        restprev.webapp.app.config['TESTING'] = True
+        self.app = restprev.webapp.app.test_client()
 
     def tearDown(self):
         pass

@@ -1,15 +1,15 @@
-﻿==============
-reST Previewer
-==============
+﻿=========
+reST Prev
+=========
 
 What is this?
 =============
-reST Previewer is preview tool for reStructuredText.
+Web app that previews reStructuredText.
 
 Live Demo
 =========
 
-You can see reST Previewer running at http://restprev.nirvake.org/.
+You can see demo running at http://restprev.nirvake.org/.
 
 Installation
 ============
@@ -20,13 +20,13 @@ Download the source code:
 
 .. code-block:: bash
 
-    $ git clone git://github.com/lanius/restpreviewer.git
+    $ git clone git://github.com/lanius/restprev.git
 
 Install required libraries:
 
 .. code-block:: bash
 
-    $ cd restpreviewer/restpreviewer/
+    $ cd restprev/restprev
     $ pip install -r requirements.txt
 
 You may need to install  python-imaging:
@@ -35,7 +35,7 @@ You may need to install  python-imaging:
 
     $ yum install python-imaging
 
-Run reST Previewer server:
+Run reST Prev server:
 
 .. code-block:: bash
 

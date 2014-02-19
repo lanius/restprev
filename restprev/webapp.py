@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-    restpreviewer.wsgi
-    ~~~~~~~~~~~~~~~~~~
+    restprev.wsgi
+    ~~~~~~~~~~~~~
 
-    reST Previewer is preview tool for reStructuredText.
+    reST Prev is preview tool for reStructuredText.
 
     :copyright: (c) 2011 lanius
     :license: MIT, see LICENSE for more details.
